@@ -11,8 +11,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/pira26/Project_Blog.git"
-},
-  "keywords": ["Blog"],
+  },
+  "keywords": [
+    "Blog"
+  ],
   "author": "Pira",
   "license": "ISC",
   "dependencies": {
@@ -23,14 +25,14 @@
     "dotenv": "4.0.0",
     "express": "4.15.2",
     "jsonwebtoken": "7.3.0",
+    "material-ui": "0.17.1",
     "mongoose": "4.9.2",
     "morgan": "1.8.1",
-    "muicss": "0.9.12",
     "passport": "0.3.2",
     "passport-local": "1.0.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "react-router": "4.0.0",
+    "react-router": "3.0.0",
     "react-tap-event-plugin": "2.0.1",
     "validator": "7.0.0"
   },
