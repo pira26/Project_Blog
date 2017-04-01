@@ -32,6 +32,9 @@ app.use(express.static('./client/dist/'));
 
 // routes
 
+const authRoutes = require('./server/routes/auth');
+app.use('/auth', authRoutes);
+
 app.use('/login', (req, res) => {
 	res.send('ok')
 })
