@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ReactDom from 'react-dom';
+import { browserHistory, Router } from 'react-router';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-import Header from './common/Header.jsx';
-import Footer from './common/Footer.jsx';
+import routes from './routes.js';
 
-export default class App extends Component {
-	
-	render() {
-		
-		return(
-			<div>
-				<Header />
-				<Footer /> 
-			</div>
-		) 
-	}
+// remove tap delay, essential for MaterialUI to work properly
+injectTapEventPlugin();
 
-} 
+ReactDom.render((
+  <MuiThemeProvider muiTheme={getMuiTheme()}>
+    <Router history={browserHistory} routes={routes} />
+  </MuiThemeProvider>), document.getElementById('root'));
