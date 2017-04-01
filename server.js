@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const morgan = require('morgan');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const config = require('./config.js');
 
