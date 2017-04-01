@@ -40,7 +40,7 @@ app.use('/signin', (req, res) => {
 })
 
 app.use('*', (req, res) => {
-	res.sendFile('/client/src/static/index.html');
+	res.sendFile(path.join(__dirname, '/client/src/static/index.html'));
 })
 
 // start the server
