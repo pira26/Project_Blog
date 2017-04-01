@@ -1,7 +1,9 @@
 import Base from './common/components/Base.jsx';
 import HomePage from './common/components/HomePage.jsx';
+import DashboardPage from './common/containers/DashboardPage.jsx';
 import LoginPage from './common/containers/LoginPage.jsx';
 import SignUpPage from './common/containers/SignUpPage.jsx';
+import Auth from './common/modules/Auth';
 
 
 const routes = {
@@ -11,7 +13,13 @@ const routes = {
 
     {
       path: '/',
-      component: HomePage
+      getComponent: (location, callback) => {
+        if (Auth.isUserAuthenticated()) {
+          callback(null, DashboardPage);
+        } else {
+          callback(null, HomePage);
+        }
+      }
     },
 
     {
@@ -22,6 +30,16 @@ const routes = {
     {
       path: '/signup',
       component: SignUpPage
+    },
+
+    {
+      path: '/logout',
+      onEnter: (nextState, replace) => {
+        Auth.deauthenticateUser();
+
+        // change the current URL to /
+        replace('/');
+      }
     }
 
   ]
