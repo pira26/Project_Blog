@@ -59,5 +59,5 @@ app.use(article);
 
 // start the server
 app.listen(config.port, () => {
-  console.log('Server is running on http://127.0.0.1:8000 or ', config.port);
+  console.log('Server is running on http://127.0.0.1:8000 or ', config.port, config.dbUrl);
 });
