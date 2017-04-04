@@ -9,7 +9,7 @@ const config = require('./config.js');
 
 // connect to the database and load models
 require('./server/models').connect(config.dbUrl, {auth:{authdb: "admin"}});
-mongoose.set('debug', true) //turn on
+mongoose.set('debug', true) //turn on debug
 
 const app = express();
 
@@ -52,7 +52,7 @@ const apiRoutes = require('./server/routes/api');
 app.use('/api', apiRoutes);
 
 app.route("*").get((req, res) => {
-  res.sendFile('/client/src/static/index.html', { root: __dirname });
+  res.sendFile(express.static(path.join(__dirname, 'dist')));
 });
 
 const article = require('./server/routes/article');
