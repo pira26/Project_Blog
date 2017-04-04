@@ -50,17 +50,12 @@ app.use('/auth', authRoutes);
 const apiRoutes = require('./server/routes/api');
 app.use('/api', apiRoutes);
 
-app.use('/login', (req, res) => {
-	res.send('ok')
-})
+app.route("*").get((req, res) => {
+  res.sendFile('/client/src/static/index.html', { root: __dirname });
+});
 
-app.use('/signin', (req, res) => {
-	res.send('lol')
-})
-
-app.use('*', (req, res) => {
-	res.sendFile(path.join(__dirname, '/client/src/static/index.html'));
-})
+const article = require('./server/routes/article');
+app.use(article);
 
 // start the server
 app.listen(config.port, () => {
