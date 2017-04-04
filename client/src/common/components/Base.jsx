@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { Link, IndexLink } from 'react-router';
 
 import Auth from '../modules/Auth';
-
+import Header from './Header.jsx' 
 
 const Base = ({ children }) => (
   <div>
@@ -26,6 +26,7 @@ const Base = ({ children }) => (
 
     { /* child component will be rendered here */ }
     {children}
+    <Header />
 
   </div>
 );
