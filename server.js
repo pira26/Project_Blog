@@ -8,7 +8,8 @@ const mongoose = require('mongoose');
 const config = require('./config.js');
 
 // connect to the database and load models
-require('./server/models').connect(config.dbUrl);
+require('./server/models').connect(config.dbUrl, {auth:{authdb: "admin"}});
+mongoose.set('debug', true) //turn on debug
 
 const app = express();
 
