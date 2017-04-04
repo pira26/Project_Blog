@@ -52,7 +52,7 @@ const apiRoutes = require('./server/routes/api');
 app.use('/api', apiRoutes);
 
 app.route("*").get((req, res) => {
-  res.sendFile('/client/src/static/index.html', { root: __dirname });
+  res.sendFile(express.static(path.join(__dirname, 'dist')));
 });
 
 const article = require('./server/routes/article');
