@@ -30,10 +30,6 @@ app.use(bodyParser.json());
 // pass the passport middleware
 app.use(passport.initialize());
 
-// tell the app to look for static files in these directories
-app.use(express.static('./client/src/static/'));
-app.use(express.static('./client/dist/'));
-
 // load passport strategies
 const localSignupStrategy = require('./server/passport/local-signup');
 const localLoginStrategy = require('./server/passport/local-login');
@@ -51,9 +47,13 @@ app.use('/auth', authRoutes);
 const apiRoutes = require('./server/routes/api');
 app.use('/api', apiRoutes);
 
-app.route("*").get((req, res) => {
-  res.sendFile(express.static(path.join(__dirname, 'dist')));
-});
+// app.route("*").get((req, res) => {
+//   res.sendFile(express.static(path.join(__dirname, 'dist')));
+// });
+
+// tell the app to look for static files in these directories
+app.use(express.static('./client/src/static/'));
+app.use(express.static('./client/dist/'));
 
 const article = require('./server/routes/article');
 app.use(article);
