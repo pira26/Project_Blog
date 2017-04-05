@@ -15,7 +15,7 @@ router.route('/articles')
 	.post((req,res) => {
 		const article = new Article();
 		article.userName = req.body.userName;
-		article.comment = req.body.comment;
+		article.comments = req.body.comments;
 		article.date = Date.now();
 		article.save((err) => {
 			if(err){
@@ -31,13 +31,13 @@ router.route('/articles/:article_id')
 			if(err){
 				res.send(err);
 			}
-			res.send(articles)
+			//res.send(articles)
 		})
 	})
 	.put((req, res) => {
 		Article.findOne({_id: req.params.article_id}, (err, articles) => {
 			article.userName = req.body.userName;
-			article.comment = req.body.comment;
+			article.comments = req.body.comments;
 			article.date = Date.now();
 			article.save((err) => {
 				if(err){
