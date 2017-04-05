@@ -1,7 +1,10 @@
 const express = require('express');
 const validator = require('validator');
 const passport = require('passport');
+const addressValidator = require('address-validator');
+const _ = require('underscore');
 
+const Address = addressValidator.Address;
 const router = express.Router();
 
 /**
@@ -30,6 +33,28 @@ function validateSignupForm(payload) {
     isFormValid = false;
     errors.name = 'Please provide your name.';
   }
+
+  if (!payload || typeof payload.userName !== 'string' || payload.userName.trim().length === 0) {
+    isFormValid = false;
+    errors.name = 'Please provide your userName.';
+  }
+
+  if (!payload || !validator.isNumeric(payload.age) || payload.age < 18) {
+    isFormValid = false;
+    errors.age = 'Please provide your age.';
+  }
+
+  addressValidator.validate(payload.address, addressValidator.match.streetAddress, (err, exact, inexact) => {
+    console.log('input: ', payload.address.toString());
+    console.log('match: ', _.map(exact, (a) => {
+      return a.toString();
+    }));
+    console.log('did you mean: ', _.map(inexact, (a) => {
+      return a.toString();
+    }));
+    isFormValid = exact.length > 0;
+    errors.name = 'Please provide your address.';
+  });
 
   if (!isFormValid) {
     message = 'Check the form for errors.';
