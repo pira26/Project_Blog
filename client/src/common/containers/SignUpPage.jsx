@@ -36,9 +36,12 @@ class SignUpPage extends React.Component {
 
     // create a string for an HTTP body message
     const name = encodeURIComponent(this.state.user.name);
+    const userName = encodeURIComponent(this.state.user.userName);
     const email = encodeURIComponent(this.state.user.email);
     const password = encodeURIComponent(this.state.user.password);
-    const formData = `name=${name}&email=${email}&password=${password}`;
+    const age = encodeURIComponent(this.state.user.age);
+    const address = encodeURIComponent(this.state.user.address);
+    const formData = `name=${name}&userName=${userName}&email=${email}&password=${password}&age=${age}&address=${address}`;
 
     // create an AJAX request
     const xhr = new XMLHttpRequest();
