@@ -8,7 +8,7 @@ export default class Header extends Component {
 
         return (
         	<div className="header">
-            	<svg viewBox="0 0 100 100" preserveAspectRatio="none">
+            	<svg viewBox="0 0 100 100">
     				<polygon fill="white" points="0,0 30,100 65,21 90,100 100,75 100,100 0,100"/>
   				</svg>
           	</div>
