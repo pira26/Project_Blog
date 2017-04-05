@@ -23,7 +23,7 @@ module.exports = {
 				},
 			},
             {
-            	test: /\.scss$/,
+            	test: /\.s?css$/,
             	include: path.join(__dirname, 'client/src/static/css'),
 	            use: [{
 	                loader: "style-loader" // creates style nodes from JS strings
