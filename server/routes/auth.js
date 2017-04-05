@@ -36,7 +36,7 @@ function validateSignupForm(payload) {
 
   if (!payload || typeof payload.userName !== 'string' || payload.userName.trim().length === 0) {
     isFormValid = false;
-    errors.name = 'Please provide your userName.';
+    errors.userName = 'Please provide your userName.';
   }
 
   if (!payload || !validator.isNumeric(payload.age) || payload.age < 18) {
@@ -53,7 +53,7 @@ function validateSignupForm(payload) {
       return a.toString();
     }));
     isFormValid = exact.length > 0;
-    errors.name = 'Please provide your address.';
+    errors.address = 'Please provide your address.';
   });
 
   if (!isFormValid) {
@@ -120,7 +120,8 @@ router.post('/signup', (req, res, next) => {
           success: false,
           message: 'Check the form for errors.',
           errors: {
-            email: 'This email is already taken.'
+            email: 'This email is already taken.',
+            userName: 'This userName is already taken.'
           }
         });
       }
