@@ -73,6 +73,7 @@ class SignUpPage extends React.Component {
         });
       }
     });
+    //console.dir('formdata:', formData);
     xhr.send(formData);
   }
 
