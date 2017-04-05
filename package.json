@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "start-dev": "nodemon server.js",
-    "bundle": "webpack -w"
+    "bundle": "webpack -w",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
