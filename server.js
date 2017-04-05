@@ -51,12 +51,12 @@ app.use('/auth', authRoutes);
 const apiRoutes = require('./server/routes/api');
 app.use('/api', apiRoutes);
 
+const article = require('./server/routes/article');
+app.use(article);
+
 app.route("*").get((req, res) => {
   res.sendFile(path.join(__dirname, '/client/src/static/index.html'));
 });
-
-const article = require('./server/routes/article');
-app.use(article);
 
 // start the server
 app.listen(config.port, () => {
