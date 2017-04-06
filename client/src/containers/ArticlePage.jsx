@@ -28,7 +28,8 @@ class ArticlePage extends Component {
         titles: '',
         posts: '',
         comments: '',
-        likes: null
+        likes: null,
+        pic: ''
       }
     };
 
@@ -49,7 +50,8 @@ class ArticlePage extends Component {
     const posts = encodeURIComponent(this.state.article.posts);
     const comments = encodeURIComponent(this.state.article.comments);
     const likes = encodeURIComponent(this.state.article.likes);
-    const formData = `titles=${titles}&posts=${posts}&comments=${comments}&likes=${likes}`;
+    const pic = encodeURIComponent(this.state.article.pic);
+    const formData = `titles=${titles}&posts=${posts}&comments=${comments}&likes=${likes}&pic=${pic}`;
 
     // create an AJAX request
     const xhr = new XMLHttpRequest();
