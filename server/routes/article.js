@@ -19,6 +19,7 @@ router.route('/blog')
 		article.posts = req.body.posts;
 		article.comments = req.body.comments;
 		article.likes = req.body.likes;
+		article.picture_url = req.body.picture_url;
 		article.save((err) => {
 			if(err){
 				res.send(err);
@@ -43,6 +44,7 @@ router.route('/blog/:article_id')
 			articles.posts = req.body.posts;
 			articles.comments = req.body.comments;
 			articles.likes = req.body.likes;
+			article.picture_url = req.body.picture_url;
 			articles.save((err) => {
 				if(err){
 					res.send(err);
