@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const Article = require('../models/article.js');
 
-router.route('/articles')
+router.route('/blog')
 	.get((req, res) => {
 		Article.find((err, artiles) => {
 			if(err){
@@ -15,7 +15,10 @@ router.route('/articles')
 	.post((req,res) => {
 		const article = new Article();
 		article.userName = req.body.userName;
+		article.titles = req.body.titles;
+		article.posts = req.body.posts;
 		article.comments = req.body.comments;
+		article.likes = req.body.likes;
 		article.save((err) => {
 			if(err){
 				res.send(err);
@@ -24,7 +27,7 @@ router.route('/articles')
 		});
 	});
 
-router.route('/edit/:article_id')
+router.route('/blog/:article_id')
 	.get((req, res) => {
 		Article.findOne({_id: req.params.article_id}, (err, articles) => {
 			if(err){
@@ -35,22 +38,23 @@ router.route('/edit/:article_id')
 	})
 	.put((req, res) => {
 		Article.findOne({_id: req.params.article_id}, (err, articles) => {
-			const article = Article();
-			article.userName = req.body.userName;
-			article.comments = req.body.comments;
-			article.save((err) => {
+			articles.userName = req.body.userName;
+			articles.titles = req.body.titles;
+			articles.posts = req.body.posts;
+			articles.comments = req.body.comments;
+			articles.likes = req.body.likes;
+			articles.save((err) => {
 				if(err){
 					res.send(err);
 				}
-				res.send(article);
+				res.send(articles);
 			});
 		});
 	})
 	.delete((req, res) => {
 		Article.remove({_id: req.params.article_id}, (err) => {
-			const article = Article();
 			if(err) res.send(err);
-			res.send(article);
+			res.send({message: 'article deleted'});
 		});
 		// res.redirect('/articles');
 	});
