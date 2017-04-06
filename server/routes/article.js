@@ -16,7 +16,6 @@ router.route('/articles')
 		const article = new Article();
 		article.userName = req.body.userName;
 		article.comments = req.body.comments;
-		article.date = Date.now();
 		article.save((err) => {
 			if(err){
 				res.send(err);
@@ -25,36 +24,35 @@ router.route('/articles')
 		});
 	});
 
-router.route('/articles/:article_id')
+router.route('/edit/:article_id')
 	.get((req, res) => {
 		Article.findOne({_id: req.params.article_id}, (err, articles) => {
 			if(err){
 				res.send(err);
 			}
-			//res.send(articles)
+			res.send(articles);
 		})
 	})
 	.put((req, res) => {
 		Article.findOne({_id: req.params.article_id}, (err, articles) => {
+			const article = Article();
 			article.userName = req.body.userName;
 			article.comments = req.body.comments;
-			article.date = Date.now();
 			article.save((err) => {
 				if(err){
 					res.send(err);
 				}
-				res.send({message: 'article have been updated'});
+				res.send(article);
 			});
 		});
 	})
 	.delete((req, res) => {
 		Article.remove({_id: req.params.article_id}, (err) => {
-			if(err){
-				res.send(err);
-			}
-			res.send({message: 'article has been deleted'});
+			const article = Article();
+			if(err) res.send(err);
+			res.send(article);
 		});
-		res.redirect('/articles');
+		// res.redirect('/articles');
 	});
 
 module.exports = router;
