@@ -1,10 +1,11 @@
-import Base from './common/components/Base.jsx';
-import HomePage from './common/components/HomePage.jsx';
-import DashboardPage from './common/containers/DashboardPage.jsx';
-import LoginPage from './common/containers/LoginPage.jsx';
-import SignUpPage from './common/containers/SignUpPage.jsx';
-import Articles from './common/containers/Articles.jsx';
-import Auth from './common/modules/Auth';
+import Base from './components/Base.jsx';
+import HomePage from './components/HomePage.jsx';
+import DashboardPage from './containers/DashboardPage.jsx';
+import LoginPage from './containers/LoginPage.jsx';
+import SignUpPage from './containers/SignUpPage.jsx';
+import ArticlePage from './containers/ArticlePage.jsx';
+import Blog from './containers/Blog.jsx';
+import Auth from './modules/Auth';
 
 
 const routes = {
@@ -44,8 +45,13 @@ const routes = {
     },
 
     {
-      path: '/articles',
-      components: Articles
+      path: '/post-article',
+      components: ArticlePage
+    },
+
+    {
+      path: '/blog',
+      components: Blog
     }
 
   ]
