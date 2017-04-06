@@ -40,9 +40,10 @@ class Blog extends Component {
 				{ this.state.body.map(article =>
 					
 					<div key={article._id}>
-						<div>{article.userName}</div>
 						<h3>{article.titles}</h3>
+						<img src={article.picture_url} alt="article image"/>
 						<div>{article.posts}</div>
+						<div>By {article.userName}</div>
 					</div>
 				)}
 			</div>
