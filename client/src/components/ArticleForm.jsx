@@ -12,7 +12,7 @@ const ArticleForm = ({
 }) => (
 	
 	<Card className="container">
-		<form action="/post" onSubmit={onSubmit}>
+		<form action="/blog" onSubmit={onSubmit}>
 			<h2 className="card-heading">Post Your Article</h2>
 			
 			{successMessage && <p className="success-message">{successMessage}</p>}
