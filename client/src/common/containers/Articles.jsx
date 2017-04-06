@@ -1,48 +1,61 @@
-import React, { Component } from 'react';
-import axios from 'axios';
+import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
+import { Card, CardText } from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 
-import Auth from '../modules/Auth';
+const Articles = ({
+  onSubmit,
+  onChange,
+  errors,
+  successMessage,
+  article
+}) => (
+	
+	<Card className="container">
+		<form action="/" onSubmit={onSubmit}>
+			<h2 className="card-heading">Post Your Article</h2>
+			
+			{successMessage && <p className="success-message">{successMessage}</p>}
+      		{errors.summary && <p className="error-message">{errors.summary}</p>}
 
-class Articles extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-		this.getData();
-	}
+      		<div className="field-line">
+		        <TextField
+		          floatingLabelText="Title"
+		          name="title"
+		          errorText={errors.title}
+		          onChange={onChange}
+		          value={article.title}
+		        />
+      		</div>
 
-	// getData() {
-	// 	axios.get('https://your-blog.herokuapp.com/articles', {
-	// 		headers: {Authorization: `bearer ${Auth.getToken()}`}
-	// 	}).then((res) => {
-	// 		console.log('data:', res);
-	// 		this.setState({body: res.data}); 
-	// 	});
-	// }
+      		<div className="field-line">
+      			<TextField
+			      hintText="Message Field"
+			      errorText={errors.posts}
+			      onChange={onChange}
+		          value={article.posts}
+			      floatingLabelText="Your Comment"
+			      multiLine={true}
+			      rows={2}
+			    />
+      		</div>
 
-	getData() {
-		axios.get('http://localhost:8000/articles', {
-			headers: {Authorization: `bearer ${Auth.getToken()}`}
-		}).then((res) => {
-			console.log('data:', res);
-			this.setState({body: res.data}); 
-		});
-	}	
+      		<div className="button-line">
+        		<RaisedButton type="submit" label="Send" primary />
+      		</div>
 
-	render() {
-		if (!this.state.body) return <h1> </h1>
-		return(
-			<div>
-				{ this.state.body.map(article =>
-					<div key={article._id}>
-						<div>{article.userName}</div>
-						<div>{article.comments}</div>
-						<button id={article._id}>EDIT</button>
-						<button id={article._id}>DELETE</button>
-					</div>
-				)}
-			</div>
-		)
-	}
-}
+		</form>
+	</Card>
+
+)
+
+Articles.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
+  successMessage: PropTypes.string.isRequired,
+  article: PropTypes.object.isRequired
+};
 
 export default Articles;
