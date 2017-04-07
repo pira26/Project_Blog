@@ -1,11 +1,8 @@
 import React from 'react';
 
-import Nav from './Nav.jsx';
-
 const About = () => (
 
-	<div>
-		<Nav /> 
+	<div> 
 		<div>
 			<h2>About this project</h2>
 			<p>This is the final project of our sixth month training at <i>Simplon.co</i></p>
