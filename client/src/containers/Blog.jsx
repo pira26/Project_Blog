@@ -9,7 +9,8 @@ const style = {
 	'borderRadius': '10px',
 	'padding': '5px',
 	'textAlign': 'center',
-	'backgroundColor':'#3A3A3C'
+	'backgroundColor':'#3A3A3C',
+	'marginLeft': '500px'
 }
 
 class Blog extends Component {
@@ -52,9 +53,9 @@ class Blog extends Component {
 					
 					<div key={article._id}>
 						<h3>{article.titles}</h3>
-						<img src={article.picture_url} alt="article image"/>
+						<img src={article.picture_url} alt="article image" className="image"/>
 						<div>{article.posts}</div>
-						<div>By {article.userName}</div>
+						<div><b>By {article.userName}</b></div>
 					</div>
 				)}
 			</div>
