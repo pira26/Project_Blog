@@ -52,9 +52,9 @@ class Blog extends Component {
 				{ this.state.body.map(article =>
 					
 					<div key={article._id}>
-						<h3>{article.titles}</h3>
-						<img src={article.picture_url} alt="article image" className="image"/>
-						<div>{article.posts}</div>
+						<h2>{article.titles}</h2>
+						<img src={article.picture_url} alt="article image" className="image"/><br/>
+						<div style={{textSpacing:'2px', paddingTop:'10px'}}>{article.posts}</div>
 						<div><b>By {article.userName}</b></div>
 					</div>
 				)}
