@@ -1,12 +1,9 @@
 import React from 'react';
 import { Card, CardTitle, CardText } from 'material-ui/Card';
 
-import Nav from './Nav.jsx';
-
 const HomePage = () => (
 	<div>
   		<Card className="container">
-	  		<Nav />
     		<CardTitle title="Your Blog" subtitle="Welcome to Your Blog." />
     		<CardText>
     			This is a blog where you can post any articles of your choice and share your passion or anything else.<br/>
