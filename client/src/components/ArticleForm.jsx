@@ -20,6 +20,15 @@ const ArticleForm = ({
 
       		<div className="field-line">
 		        <TextField
+		          floatingLabelText="Username"
+		          name="userName"
+		          errorText={errors.userName}
+		          value={article.userName}
+		        />
+      		</div>
+
+      		<div className="field-line">
+		        <TextField
 		          floatingLabelText="Title"
 		          name="title"
 		          errorText={errors.title}
@@ -28,14 +37,24 @@ const ArticleForm = ({
       		</div>
 
       		<div className="field-line">
-      			<TextField
-			      errorText={errors.posts}
-		          value={article.posts}
-			      floatingLabelText="Your Comment"
-			      multiLine={true}
-			      rows={2}
-			    />
+		        <TextField
+		          floatingLabelText="Post"
+		          multiLine={true}
+		          rows={2}
+		          name="post"
+		          errorText={errors.post}
+		          value={article.post}
+		        />
       		</div>
+
+      		<div className="field-line">
+		        <TextField
+		          floatingLabelText="Image URL"
+		          name="picture"
+		          errorText={errors.picture}
+		          value={article.picture}
+		        />
+		    </div>
 
       		<div className="button-line">
         		<RaisedButton type="submit" label="Send" primary />
