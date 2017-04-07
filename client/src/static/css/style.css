@@ -19,13 +19,12 @@ a:hover {
 }
 
 .top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px 15px;
   margin-bottom: 50px;
-}
-.top-bar::after {
-  content: '';
-  display: block;
-  clear: both;
 }
 
 .top-bar-left {
@@ -64,4 +63,9 @@ a:hover {
 .success-message {
   padding: 0 16px;
   color: green;
+}
+
+img {
+  height: 300px;
+  width: 75%;
 }
