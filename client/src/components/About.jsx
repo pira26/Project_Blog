@@ -6,7 +6,7 @@ const About = () => (
 		<div>
 			<h2>About this project</h2>
 			<p>This is the final project of our sixth month training at <i>Simplon.co</i></p>
-			<ul>
+			<ul style={{listStyle:"none"}}>
 				<h3>As a Visitor, I can:</h3>
 				<li>Consult articles</li>
 				<li>Like/Comment</li>
@@ -14,7 +14,7 @@ const About = () => (
 				<li>See/Edit Comments</li>
 				<li>Add/Modify porfile info</li>
 			</ul>
-			<ul>
+			<ul style={{listStyle:"none"}}>
 				<h3>As an Administrator, I can:</h3>
 				<li>Create an account</li>
 				<li>Post/Edit/Delete articles</li>
@@ -26,7 +26,7 @@ const About = () => (
 		<div>
 			<h2>About the technos</h2>
 			<p>According to what I've learned, I use the MERN stack</p>
-			<ul>
+			<ul style={{listStyle:"none"}}>
 				<li>MongoDB/Mongoose</li>
 				<li>Express</li>
 				<li>ReactJs</li>
@@ -37,7 +37,7 @@ const About = () => (
 				<li>JSON Web Token</li>
 				<li>Passport</li>
 				<li>Validador</li>
-				<li>dotenv</li>
+				<li>Dotenv</li>
 			</ul>
 
 		</div>
