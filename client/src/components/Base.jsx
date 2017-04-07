@@ -4,7 +4,10 @@ import { Link, IndexLink } from 'react-router';
 import Auth from '../modules/Auth'; 
 
 const Base = ({ children }) => (
-  <div>
+  <div className="col-xs-12
+                  col-sm-12
+                  col-md-12
+                  col-lg-12">
     <div className="top-bar">
       <div className="top-bar-left">
         <IndexLink to="/blog">Blog</IndexLink>
