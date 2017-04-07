@@ -3,10 +3,11 @@ import { Link, IndexLink } from 'react-router';
 
 import Auth from '../modules/Auth';
 import Nav from './Nav.jsx';
+import '../static/css/base.scss';
 
 const Base = ({ children }) => (
-  <div>
-    <div className="top-bar">
+  <div className="header" style={{textAlign:"center"}}>
+    <div className="top-bar" style={{paddingTop:"50px"}}>
       <div className="top-bar-left">
         <IndexLink to="/blog">Blog</IndexLink>
       </div>
@@ -27,7 +28,7 @@ const Base = ({ children }) => (
     </div>
 
     { /* child component will be rendered here */ }
-    {children}
+    <div style={{marginTop:"175px"}}>{children}</div>
 
   </div>
 );
