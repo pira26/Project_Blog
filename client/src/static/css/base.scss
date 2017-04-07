@@ -1,7 +1,21 @@
 .header {
-  position: relative;
-  height: 200px;
-  background-image: linear-gradient(#464649, #3A3A3C);
-  border-bottom-left-radius: 50% 20%;
-  border-bottom-right-radius: 50% 20%;
+  	position: relative;
+  	height: 200px;
+    background-image: linear-gradient(#464649, #3A3A3C);
+  	border-bottom-left-radius: 50% 20%;
+  	border-bottom-right-radius: 50% 20%;
+  	text-align: center;
+}
+
+.footer {
+	position: relative;
+  	height: 200px;
+    background-image: linear-gradient(#3A3A3C, #464649);
+    border-top-left-radius: 50% 20%;
+    border-top-right-radius: 50% 20%;
+    margin-top: 50px;
+    color: white;
+    .footerContent {
+    	padding-top: 50px;
+    }
 }
