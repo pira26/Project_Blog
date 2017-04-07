@@ -5,11 +5,11 @@ const Article = require('../models/article.js');
 
 router.route('/blog')
 	.get((req, res) => {
-		Article.find((err, artiles) => {
+		Article.find((err, articles) => {
 			if(err){
 				res.send(err);
 			}
-			res.send(artiles);
+			res.send(articles);
 		})
 	})
 	.post((req,res) => {
