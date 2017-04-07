@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 const Contact = () => (
 
-	<div>
+	<div style={{textAlign:"left"}}>
 		<Card>
 		    <CardHeader
 		      title="Pirathaab SRITHARAN"
