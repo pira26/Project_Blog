@@ -10,6 +10,11 @@ const Nav = () => (
 		      	href="http://localhost:8000/blog"
 		      	primary={true}
 		    	hoverColor="#FFFFFF" />
+		    <FlatButton 
+		      	label="New Article"
+		      	href="http://localhost:8000/post-article"
+		      	primary={true}
+		    	hoverColor="#FFFFFF" />
 		      <FlatButton 
 		      	label="About"
 		      	href="http://localhost:8000/about"
