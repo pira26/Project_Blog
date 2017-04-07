@@ -2,12 +2,9 @@ import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 
-import Nav from './Nav.jsx';
-
 const Contact = () => (
 
 	<div>
-		<Nav /> 
 		<Card>
 		    <CardHeader
 		      title="Pirathaab SRITHARAN"
