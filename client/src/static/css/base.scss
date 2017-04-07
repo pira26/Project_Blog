@@ -14,8 +14,16 @@
     border-top-left-radius: 50% 20%;
     border-top-right-radius: 50% 20%;
     margin-top: 50px;
-    color: white;
+    color: #4AC6DB;
     .footerContent {
+    	display: flex;
+    	flex-direction: row;
+    	align-items: center;
+    	justify-content: center;
     	padding-top: 50px;
+    	.content{
+			border-right: 2px solid white;
+			padding: 5px;
+    	}
     }
 }
