@@ -3,7 +3,14 @@ import { Link } from 'react-router';
 import axios from 'axios';
 
 import Auth from '../modules/Auth';
-import Nav from '../components/Nav.jsx';
+
+const style = {
+	'position': 'fixed',
+	'borderRadius': '10px',
+	'padding': '5px',
+	'textAlign': 'center',
+	'backgroundColor':'#3A3A3C'
+}
 
 class Blog extends Component {
 	constructor(props) {
@@ -33,10 +40,12 @@ class Blog extends Component {
 	render() {
 		if (!this.state.body) return <h1> </h1>
 		return(
-			<div>
-				<Nav />
+			<div className="col-xs-12
+							col-sm-12
+							col-md-12
+							col-lg-12">
 				<div>
-					<Link to='/post-article'>New <br/> Article</Link>	
+					<Link to='/post-article'style={style}>New <br/> Article</Link>	
 				</div>
 
 				{ this.state.body.map(article =>
