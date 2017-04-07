@@ -9,17 +9,17 @@ const Nav = () => (
 		      	label="Home"
 		      	href="http://localhost:8000/blog"
 		      	primary={true}
-		    	hoverColor="#3A3A3C" />
+		    	hoverColor="#FFFFFF" />
 		      <FlatButton 
 		      	label="About"
 		      	href="http://localhost:8000/about"
 		      	primary={true}
-		    	hoverColor="#3A3A3C" />
+		    	hoverColor="#FFFFFF" />
 		      <FlatButton 
 		      	label="Contact"
 		      	href="http://localhost:8000/contact"
 		      	primary={true}
-		    	hoverColor="#3A3A3C" />
+		    	hoverColor="#FFFFFF" />
 		    </CardActions>
 	</div>
 );
