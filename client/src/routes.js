@@ -1,5 +1,7 @@
 import Base from './components/Base.jsx';
 import HomePage from './components/HomePage.jsx';
+import About from './components/About.jsx';
+import Contact from './components/Contact.jsx';
 import DashboardPage from './containers/DashboardPage.jsx';
 import LoginPage from './containers/LoginPage.jsx';
 import SignUpPage from './containers/SignUpPage.jsx';
@@ -52,6 +54,16 @@ const routes = {
     {
       path: '/blog',
       components: Blog
+    },
+
+    {
+      path: '/about',
+      components: About
+    },
+
+    {
+      path: '/contact',
+      components: Contact
     }
 
   ]
