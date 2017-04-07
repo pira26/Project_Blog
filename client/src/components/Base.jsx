@@ -6,7 +6,7 @@ import Nav from './Nav.jsx';
 import '../static/css/base.scss';
 
 const Base = ({ children }) => (
-  <div className="header" style={{textAlign:"center"}}>
+  <div className="header">
     <div className="top-bar" style={{paddingTop:"50px"}}>
       <div className="top-bar-left">
         <IndexLink to="/blog">Blog</IndexLink>
@@ -29,6 +29,12 @@ const Base = ({ children }) => (
 
     { /* child component will be rendered here */ }
     <div style={{marginTop:"175px"}}>{children}</div>
+
+    <div className="footer">
+      <div className="footerContent">
+        <p>By Pira 2017 &copy;</p>
+      </div>
+    </div>
 
   </div>
 );
