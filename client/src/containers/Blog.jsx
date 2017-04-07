@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import axios from 'axios';
 
 import Auth from '../modules/Auth';
+import Nav from '../components/Nav.jsx';
 
 class Blog extends Component {
 	constructor(props) {
@@ -33,6 +34,7 @@ class Blog extends Component {
 		if (!this.state.body) return <h1> </h1>
 		return(
 			<div>
+				<Nav />
 				<div>
 					<Link to='/post-article'>New <br/> Article</Link>	
 				</div>
