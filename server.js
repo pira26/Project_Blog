@@ -13,6 +13,7 @@ mongoose.set('debug', true) //turn on debug
 
 const app = express();
 
+// Enable CORS so that we can make HTTP request
 app.use((req, res, next) => {
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST'); 
@@ -37,8 +38,10 @@ app.use(express.static('./client/dist/'));
 // load passport strategies
 const localSignupStrategy = require('./server/passport/local-signup');
 const localLoginStrategy = require('./server/passport/local-login');
+const localArticleStrategy = require('./server/passport/local-article');
 passport.use('local-signup', localSignupStrategy);
 passport.use('local-login', localLoginStrategy);
+passport.use('local-article', localArticleStrategy);
 
 // pass the authenticaion checker middleware
 const authCheckMiddleware = require('./server/middleware/auth-check');
