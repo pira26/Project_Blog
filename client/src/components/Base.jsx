@@ -32,8 +32,11 @@ const Base = ({ children }) => (
 
     <div className="footer">
       <div className="footerContent">
-        <p>By Pira 2017 &copy;</p>
+        <p className="content">Privacy Policy</p>
+        <p className="content">SiteMap</p>
+        <p className="content">Terms & Conditions</p>
       </div>
+      <p>&copy; 2017 by Pira all rights reserved</p>
     </div>
 
   </div>
